@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  const { results: movies } = await tmdb.trending.movie({
+  const { results: movies = [] } = await tmdb.trending.movie({
     time: "day",
     page: "1",
   })
 
-  const { results: tvShows } = await tmdb.trending.tv({
+  const { results: tvShows = [] } = await tmdb.trending.tv({
     time: "day",
     page: "1",
   })
